@@ -226,9 +226,7 @@ public class GuiSchematicManager extends GuiSchematicBrowserBase implements ISel
             {
                 if (fileType == FileType.LITEMATICA_SCHEMATIC)
                 {
-                    GuiSchematicSaveExported gui = new GuiSchematicSaveExported(entry.getType(), entry.getDirectory(), entry.getName(), this.gui.exportType);
-                    gui.setParent(this.gui);
-                    GuiBase.openGui(gui);
+
                 }
                 else
                 {
@@ -240,9 +238,6 @@ public class GuiSchematicManager extends GuiSchematicBrowserBase implements ISel
                 if (fileType == FileType.SCHEMATICA_SCHEMATIC ||
                     fileType == FileType.VANILLA_STRUCTURE)
                 {
-                    GuiSchematicSaveImported gui = new GuiSchematicSaveImported(entry.getType(), entry.getDirectory(), entry.getName());
-                    gui.setParent(this.gui);
-                    GuiBase.openGui(gui);
                 }
                 else
                 {

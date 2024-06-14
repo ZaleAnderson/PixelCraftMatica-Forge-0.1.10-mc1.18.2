@@ -37,8 +37,6 @@ public class KeyCallbacks
 
         Configs.Generic.PICK_BLOCKABLE_SLOTS.setValueChangeCallback(valueChangeCallback);
 
-        Hotkeys.CLONE_SELECTION.getKeybind().setCallback(callbackHotkeys);
-        Hotkeys.EASY_PLACE_ACTIVATION.getKeybind().setCallback(callbackHotkeys);
         Hotkeys.EXECUTE_OPERATION.getKeybind().setCallback(callbackHotkeys);
         Hotkeys.LAYER_MODE_NEXT.getKeybind().setCallback(callbackHotkeys);
         Hotkeys.LAYER_MODE_PREVIOUS.getKeybind().setCallback(callbackHotkeys);
@@ -61,8 +59,6 @@ public class KeyCallbacks
         Hotkeys.PICK_BLOCK_LAST.getKeybind().setCallback(callbackHotkeys);
         Hotkeys.PICK_BLOCK_TOGGLE.getKeybind().setCallback(new KeyCallbackToggleBooleanConfigWithMessage(Configs.Generic.PICK_BLOCK_ENABLED));
         Hotkeys.RERENDER_SCHEMATIC.getKeybind().setCallback(callbackHotkeys);
-        Hotkeys.SAVE_AREA_AS_IN_MEMORY_SCHEMATIC.getKeybind().setCallback(callbackHotkeys);
-        Hotkeys.SAVE_AREA_AS_SCHEMATIC_TO_FILE.getKeybind().setCallback(callbackHotkeys);
         Hotkeys.SCHEMATIC_VERSION_CYCLE_NEXT.getKeybind().setCallback(callbackHotkeys);
         Hotkeys.SCHEMATIC_VERSION_CYCLE_PREVIOUS.getKeybind().setCallback(callbackHotkeys);
         Hotkeys.SELECTION_GROW_HOTKEY.getKeybind().setCallback(callbackHotkeys);
@@ -74,9 +70,7 @@ public class KeyCallbacks
         Hotkeys.TOOL_SELECT_MODIFIER_BLOCK_2.getKeybind().setCallback(callbackHotkeys);
         Hotkeys.UNLOAD_CURRENT_SCHEMATIC.getKeybind().setCallback(callbackHotkeys);
 
-        Hotkeys.ADD_SELECTION_BOX.getKeybind().setCallback(callbackMessage);
         Hotkeys.DELETE_SELECTION_BOX.getKeybind().setCallback(callbackMessage);
-        Hotkeys.EASY_PLACE_TOGGLE.getKeybind().setCallback(new KeyCallbackToggleBooleanConfigWithMessage(Configs.Generic.EASY_PLACE_MODE));
         Hotkeys.MOVE_ENTIRE_SELECTION.getKeybind().setCallback(callbackMessage);
         Hotkeys.SELECTION_MODE_CYCLE.getKeybind().setCallback(callbackMessage);
         Hotkeys.SET_AREA_ORIGIN.getKeybind().setCallback(callbackMessage);
@@ -242,10 +236,7 @@ public class KeyCallbacks
                 }
             }
 
-            if (key == Hotkeys.EASY_PLACE_ACTIVATION.getKeybind())
-            {
-                return WorldUtils.handleEasyPlace(this.mc);
-            }
+
             else if (key == Hotkeys.OPEN_GUI_MAIN_MENU.getKeybind())
             {
                 GuiBase.openGui(new GuiMainMenu());
@@ -427,14 +418,7 @@ public class KeyCallbacks
 
                 return false;
             }
-            else if (key == Hotkeys.SAVE_AREA_AS_SCHEMATIC_TO_FILE.getKeybind())
-            {
-                return SchematicUtils.saveSchematic(false);
-            }
-            else if (key == Hotkeys.SAVE_AREA_AS_IN_MEMORY_SCHEMATIC.getKeybind())
-            {
-                return SchematicUtils.saveSchematic(true);
-            }
+
             else if (key == Hotkeys.SCHEMATIC_VERSION_CYCLE_NEXT.getKeybind())
             {
                 if (DataManager.getSchematicProjectsManager().hasProjectOpen())
@@ -451,11 +435,7 @@ public class KeyCallbacks
                 }
                 return true;
             }
-            else if (key == Hotkeys.CLONE_SELECTION.getKeybind())
-            {
-                SchematicUtils.cloneSelectionArea(this.mc);
-                return true;
-            }
+
             else if (key == Hotkeys.EXECUTE_OPERATION.getKeybind() && ((hasTool && toolEnabled) || Configs.Generic.EXECUTE_REQUIRE_TOOL.getBooleanValue() == false))
             {
                 if (DataManager.getSchematicProjectsManager().hasProjectOpen())
@@ -532,14 +512,8 @@ public class KeyCallbacks
         {
             ToolMode mode = DataManager.getToolMode();
 
-            if (key == Hotkeys.ADD_SELECTION_BOX.getKeybind())
-            {
-                if (mode.getUsesAreaSelection())
-                {
-                    return DataManager.getSelectionManager().createNewSubRegion(this.mc, true);
-                }
-            }
-            else if (key == Hotkeys.DELETE_SELECTION_BOX.getKeybind())
+
+            if (key == Hotkeys.DELETE_SELECTION_BOX.getKeybind())
             {
                 if (mode.getUsesAreaSelection())
                 {

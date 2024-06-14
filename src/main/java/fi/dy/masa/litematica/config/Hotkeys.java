@@ -9,10 +9,7 @@ import java.util.List;
 public class Hotkeys
 {
     public static final ConfigHotkey ADD_SELECTION_BOX                  = new ConfigHotkey("addSelectionBox",                   "M,A",  "Add a new selection box (position 1) here");
-    public static final ConfigHotkey CLONE_SELECTION                    = new ConfigHotkey("cloneSelection",                    "",     "Quickly clone the current area selection.\nThis basically just creates an in-memory-only schematic,\nand then creates a placement of that schematic and selects it,\nand also switches the tool mode to the Paste mode.");
     public static final ConfigHotkey DELETE_SELECTION_BOX               = new ConfigHotkey("deleteSelectionBox",                "",     "Delete the currently selected box");
-    public static final ConfigHotkey EASY_PLACE_ACTIVATION              = new ConfigHotkey("easyPlaceUseKey",                   "BUTTON_2", KeybindSettings.PRESS_ALLOWEXTRA, "When the easyPlaceMode is enabled, this key is used for placing the blocks");
-    public static final ConfigHotkey EASY_PLACE_TOGGLE                  = new ConfigHotkey("easyPlaceToggle",                   "",     "Allows quickly toggling on/off the Easy Place mode");
     public static final ConfigHotkey EXECUTE_OPERATION                  = new ConfigHotkey("executeOperation",                  "",     "Execute the currently selected tool operation with the\ncurrent selection or placement in the Fill, Replace,\nPaste Schematic etc. modes");
     public static final ConfigHotkey INVERT_GHOST_BLOCK_RENDER_STATE    = new ConfigHotkey("invertGhostBlockRenderState",       "",     "Inverts the schematic/ghost block rendering status\nwhile this keybind is held down");
     public static final ConfigHotkey INVERT_OVERLAY_RENDER_STATE        = new ConfigHotkey("invertOverlayRenderState",          "",     "Inverts the Overlay rendering status while this keybind is held down");
@@ -41,8 +38,6 @@ public class Hotkeys
     public static final ConfigHotkey RENDER_INFO_OVERLAY                = new ConfigHotkey("renderInfoOverlay",                 "I",            KeybindSettings.PRESS_ALLOWEXTRA, "The key that enables rendering the block info overlay.\nUse NONE for not requiring a key to be pressed.\nDisable the similarly named option in the Visuals\nconfigs to disable the overlay completely.");
     public static final ConfigHotkey RENDER_OVERLAY_THROUGH_BLOCKS      = new ConfigHotkey("renderOverlayThroughBlocks",        "RIGHT_CONTROL", KeybindSettings.PRESS_ALLOWEXTRA, "A hotkey to allow the overlays to render through blocks.\nThis is just a quicker way to temporarily enable\nthe same thing that the 'schematicOverlayRenderThroughBlocks' option in Visuals does.");
     public static final ConfigHotkey RERENDER_SCHEMATIC                 = new ConfigHotkey("rerenderSchematic",                 "F3,M", "Hotkey to refresh/redraw only the schematic, instead of\nhaving to refresh the vanilla terrain too with F3 + A");
-    public static final ConfigHotkey SAVE_AREA_AS_IN_MEMORY_SCHEMATIC   = new ConfigHotkey("saveAreaAsInMemorySchematic",       "",     "Save the current Area Selection as an in-memory Schematic");
-    public static final ConfigHotkey SAVE_AREA_AS_SCHEMATIC_TO_FILE     = new ConfigHotkey("saveAreaAsSchematicToFile",         "LEFT_CONTROL,LEFT_ALT,S",  "Save the current Area Selection as a Schematic to a file");
     public static final ConfigHotkey SCHEMATIC_EDIT_BREAK_ALL_EXCEPT    = new ConfigHotkey("schematicEditBreakAllExcept",       "", KeybindSettings.MODIFIER_INGAME, "Modifier key to activate the \"break everything except\"\nmode/function in the Schematic Edit tool mode.\nBasically when you hold this key and punch a schematic block,\nall other blocks except this block will be removed from the schematic.");
     public static final ConfigHotkey SCHEMATIC_EDIT_BREAK_ALL           = new ConfigHotkey("schematicEditBreakPlaceAll",        "", KeybindSettings.MODIFIER_INGAME, "Modifier key to activate the \"break all identical blocks\"\nfunction in the Schematic Edit tool mode");
     public static final ConfigHotkey SCHEMATIC_EDIT_BREAK_DIRECTION     = new ConfigHotkey("schematicEditBreakPlaceDirection",  "", KeybindSettings.MODIFIER_INGAME, "Modifier key to activate the directional/continuous\nbreak or place function in the Schematic Edit tool mode");
@@ -83,10 +78,7 @@ public class Hotkeys
 
     public static final List<ConfigHotkey> HOTKEY_LIST = ImmutableList.of(
             ADD_SELECTION_BOX,
-            CLONE_SELECTION,
             DELETE_SELECTION_BOX,
-            EASY_PLACE_ACTIVATION,
-            EASY_PLACE_TOGGLE,
             EXECUTE_OPERATION,
             INVERT_GHOST_BLOCK_RENDER_STATE,
             INVERT_OVERLAY_RENDER_STATE,
@@ -115,8 +107,6 @@ public class Hotkeys
             RENDER_INFO_OVERLAY,
             RENDER_OVERLAY_THROUGH_BLOCKS,
             RERENDER_SCHEMATIC,
-            SAVE_AREA_AS_IN_MEMORY_SCHEMATIC,
-            SAVE_AREA_AS_SCHEMATIC_TO_FILE,
             SCHEMATIC_EDIT_BREAK_ALL,
             SCHEMATIC_EDIT_BREAK_ALL_EXCEPT,
             SCHEMATIC_EDIT_BREAK_DIRECTION,

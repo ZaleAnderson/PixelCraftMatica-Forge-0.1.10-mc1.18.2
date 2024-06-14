@@ -123,7 +123,6 @@ public class GuiAreaSelectionEditorNormal extends GuiListBase<String, WidgetSele
 
         boolean currentlyOn = this.selection.getExplicitOrigin() != null;
         xSave += this.createButtonOnOff(xSave, ySave, -1, currentlyOn, ButtonListener.Type.TOGGLE_ORIGIN_ENABLED) + 4;
-        xSave += this.createButton(xSave, ySave, -1, ButtonListener.Type.CREATE_SCHEMATIC) + 4;
 
         // Manual Origin defined
         if (this.selection.getExplicitOrigin() != null)
@@ -469,10 +468,6 @@ public class GuiAreaSelectionEditorNormal extends GuiListBase<String, WidgetSele
 
                 case CHANGE_CORNER_MODE:
                     Configs.Generic.SELECTION_CORNERS_MODE.setOptionListValue(Configs.Generic.SELECTION_CORNERS_MODE.getOptionListValue().cycle(false));
-                    break;
-
-                case CREATE_SCHEMATIC:
-                    SchematicUtils.saveSchematic(GuiBase.isShiftDown());
                     break;
 
                 case ANALYZE_AREA:

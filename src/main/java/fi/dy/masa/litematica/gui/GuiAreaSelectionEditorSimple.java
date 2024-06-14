@@ -65,7 +65,6 @@ public class GuiAreaSelectionEditorSimple extends GuiAreaSelectionEditorNormal
             this.createCoordinateInputs(x, y, width, Corner.NONE);
         }
 
-        x = this.createButton(22, nextY, -1, ButtonListener.Type.CREATE_SCHEMATIC) + 26;
 
         this.addRenderingDisabledWarning(250, 48);
 

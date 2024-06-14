@@ -7,7 +7,6 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
 import fi.dy.masa.litematica.data.DataManager;
 import fi.dy.masa.litematica.scheduler.TaskScheduler;
-import fi.dy.masa.litematica.scheduler.tasks.TaskSaveSchematic;
 import fi.dy.masa.litematica.schematic.LitematicaSchematic;
 import fi.dy.masa.litematica.schematic.placement.SchematicPlacement;
 import fi.dy.masa.litematica.selection.AreaSelection;
@@ -328,9 +327,6 @@ public class SchematicProject
             SaveCompletionListener listener = new SaveCompletionListener(name, fileName, areaOffset);
             LitematicaSchematic.SchematicSaveInfo info = new LitematicaSchematic.SchematicSaveInfo(false, false);
 
-            TaskSaveSchematic task = new TaskSaveSchematic(this.directory, fileName, schematic, selection.copy(), info, false);
-            task.setCompletionListener(listener);
-            TaskScheduler.getServerInstanceIfExistsOrClient().scheduleTask(task, 2);
             this.saveInProgress = true;
             this.dirty = true;
             this.saveToFile();
