@@ -3,17 +3,17 @@ loaderVersion = "[38,)"
 license = "LGPLv3"
 
 [[mods]]
-modId = "forgematica"
+modId = "PixelCraftMatica"
 version = "${version}"
-displayName = "Forgematica"
-displayURL="https://github.com/ThinkingStudios/Litematica-Forge" #optional
+displayName = "PixelCraftMatica"
+displayURL="https://github.com/ZaleAnderson/PixelCraftMatica-Forge-0.1.10-mc1.18.2" #optional
 logoFile="icon.png" #optional
 credits="masa" #optional
-authors="TexTrue, ThinkingStudio" #optional
+authors="TexTrue, ThinkingStudio, ZaleAnderson" #optional
 description = '''
 Litematica unofficial forge port.
-
 A modern schematic mod for Forge.
+No EasyPlace or Saving functionality.
 '''
 
 [[dependencies.forgematica]]
